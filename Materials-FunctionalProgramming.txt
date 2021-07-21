@@ -1,0 +1,1246 @@
+
+Lab :
+
+JDK 11
+IntelliJ Idea -community
+
+Java functional Programming
+
+Reactive Programming -Using Rxjava
+
+Vertx
+..............................................................................................
+
+Basic Req:
+
+-Java
+..............................................................................................
+
+What is Java?
+
+Java is technology.
+
+Technology means solving praticle problems
+
+Why java technology created?
+
+ To solve the problem of portablity.
+
+If you write code in c/c++, can be targeted only one platform(os+hardware).
+
+Write one code, port across the multiple platforms without changining source code and assembly
+code.
+
+OAK was the language created from c,c++.
+
+Virtualization was key concept of application development.
+
+Types virtualization:
+
+1.hardware virtualzation
+  type-1
+2.OS virtualzation
+   container technologies - docker,kubernetes
+   vms
+3.application virtualzation
+   different os and hardware
+   application code remains same across os and hardware.
+ -JAVA technology created to virtualize the application runtimes , so that we dont need to recompile,rebuild,redevelop application for every os.
+
+in order to run apps, we need runtime - VM - Java Virtual VM.
+
+Java VM is just a c program.
+
+Java is platform independant.
+..............................................................................................
+
+Java Programming language:
+
+It is also programming language like c,c++.
+
+Style of programming languages:
+
+Today so many styles
+
+1.object oriented programming.
+2.Producural style
+3.Functional programming
+4.Event driven programming
+5.Reactive Programming
+.....
+
+Java was created based on Object Oriented Programming model/style.
+
+Java Versions:
+java 1.0 to java 18
+
+Stable Versions:
+
+Java 8 and Java 11
+
+From Java 8 , Java Introduced Functional Programming Style.
+
+Now , you can call java is "Object oriented functional style Programming language".
+
+
+Java Technology Spec:
+
+The Entire java technology has been created based on specifications-(set of rules and regularations).
+
+Based on spec , any body can give implementations.
+
+Who defines Spec?
+ -JCP- java community process.
+............................................................................................
+JAVA editions:
+
+1.JSE - Core java Language
+2.JEE - For server side computing - Servlet,JSP,WebServices..... 
+3.JME - For device computing
+............................................................................................
+
+JVM languages:
+.............
+
+JSR 241  introduced new spec for jvm languages.
+
+According to this spec, any body can create new pl for jvm.
+
+Multi language spec. Other than java programming language, we can create new language.
+
+Groovy - is first reference implementation based on JSR 241.
+Jython
+JRuby
+Kotlin
+.............................................................................................
+
+Now we are going to look at, Java Functional Programming.
+
+What is functional Programming?
+-Functional programming is one the programming paradigm like OO.
+
+Object Oriented Programming Principles:
+.......................................
+Object: 
+
+ Object could be any thing that belongs to problem space/domain.
+ Object is memory reprentation -  CS- Implementation.
+
+1.Abstraction
+  You take necessary things from the object.
+  class - is tool to capture object characteristics(state,behaviour,identity)
+2.Encapsulation
+  Hide and unhide  
+  To limit code sharing across the application.
+3.Hierarchy
+   organization
+  -has-a - compostion
+  -IS-A - inheritance
+4.Typing
+  Type System
+    - Strong Typing / Static Typing
+    - Weak Typing/Dynamic Typing
+   Polymorphism
+     static poly
+     dynamic poly
+5.Modularity
+   How to organize code
+   packages
+----------------------
+6.Concurrency
+   Threading
+7.Persistency
+   saving main memory data into disk and sending via network.
+   seriazliation
+//////////
+
+If any language implements the first 5 principles, those languages are called object oriented
+languages.
+
+Functional Programming 
+What is?
+Why fp
+Implementation on Java.
+
+What is function according to math?
+  Unit of computation. - c  = a + b;
+
+What is functional Programming?
+
+ In computer science, functional programming is a programming paradigm where programs are constructed by applying and composing functions.
+
+ It is a declarative programming paradigm in which function definitions are trees of expressions that map values to other values, rather than a sequence of imperative statements which update the running state of the program. 
+
+In functional programming, functions are treated as first-class citizens, meaning that they can be bound to names (including local identifiers), passed as arguments, and returned from other functions, just as any other data type can.
+
+This allows programs to be written in a declarative and composable style, where small functions are combined in a modular manner. 
+
+History of functional Programming
+.................................
+
+Before functional programming ; why functional programming was created?
+
+In 1930,The scientist called "Alan Turing" : Turing Machine ->State Machine
+    
+-Abstract computing machine (abstract computer) : 
+    it is mathematical abstraction for storing , processing data,read (state).
+
+
+State Machine: 
+  It is mathematical abstraction of "How to store state in memory and manipulate
+  that memory".
+ eg 
+  int a =10; ----> a's memory address--->1024 and 10 
+
+ State mutations:
+   a++ -> 11-------What is memory address of 11? 1024.
+
+
+int c = a++; //expression
+
+drawbacks of turing machine
+
+1.old values can't be tracked , same memory addr is overriden : Time travel
+
+After, 1970 - Concurrency--multi process -- multi threading
+
+multi state mutation will lead
+1.data corruption.
+   ->Mutx - Lock
+  
+Lock will lead another problems
+  -Blocking
+  -what if thread takes more time--->waiting--performance
+  -Thread dead locking
+
+
+
+Solution to Turning Machine:
+.............................
+
+Lambda Calculus:
+
+  It is another mathematical approach like state machine to represent state in 
+  memory and mutate it.
+    Lambda calculus (also written as λ-calculus) is a formal system in mathematical
+logic for expressing computation based on function abstraction and application using variable binding and substitution.
+
+Lambda Calculus invented by The "Alonzo Church" , Who was PHD student of "Alan Turning"..
+..............................................................................................
+
+The first functional programming language, LISP, was developed in the late 1950s for the IBM 700/7000 series of scientific computers by John McCarthy while at Massachusetts Institute of Technology (MIT), based on Lambda Calculs.
+
+Functional programming and its principles dervied from lambda calculs.
+
+
+if any pl follows 100% lambda calculs principles those languages are called "Pure Functional Programming language"
+if any pl follows only few principles those languages are called "function style programming language".
+
+
+Pure fp languages:
+
+1.LSIP
+2.Haskell
+etc......
+
+Functional Style Languages:
+
+1.java script
+2.python 
+3.java
+4.groovy
+5.Kotiln
+etc...
+
+
+Functional Programming Principles.
+
+1.Function is first class citizen (special):
+
+- functions are passed around .(in,out)
+
+This means the language supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures
+
+- function is literal/values, it has type like numbers and strings
+
+ int a =10;  a is variable , and its value is 10 - value/literal
+
+2.Higher order function
+
+   The function which takes another function as parameter and it returns function as well.
+
+3.Pure functions
+
+4.Recursion
+   Any fp implementation does not support loops - for,while,do..while
+  loops are implemented via recurrsion.
+5.Type system
+   can be static or dynamic
+
+6.Referential transparency
+   state mutations- immutablity.
+
+..............................................................................................
+
+Java and Functional Programming:
+.................................
+
+Java 8 supports functional programming principles, java is called "functional style pl".
+
+Lambda calculs:
+
+"lambda calculs implemenation in java through interfaces"
+
+Use case of interface :
+ -Inheritance
+ -To hide many implementation under one single type.
+ -inner classes
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+Getting Started FP implementation:
+
+inheritance: common code sharing across multiple classes
+
+lambda calculs:
+
+"lambda calculs implemenation in java through interfaces"
+
+Use case of interface :
+ -Inheritance
+ -To hide many implementation under one single type.
+ -inner classes
+
+
+Use case : How to implement interfaces
+package com.dell.fp.interfaces;
+
+public interface Greeter {
+    void sayGreet();
+}
+package com.dell.fp.interfaces;
+
+public class Hai implements Greeter {
+    @Override
+    public void sayGreet() {
+        System.out.println("Hai");
+    }
+}
+package com.dell.fp.interfaces;
+
+public class Hello implements Greeter {
+    @Override
+    public void sayGreet() {
+        System.out.println("Hello!");
+    }
+}
+package com.dell.fp.interfaces;
+
+public class GreeterInterfaceImplMain {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+        //create object for Hello
+        greeter = new Hello();
+        greeter.sayGreet();
+
+        //create object for hai
+        greeter = new Hai();
+        greeter.sayGreet();
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+Interfaces and implementation:
+..............................
+
+Ways:
+
+1.Create concrete class and implement interface.
+
+public class Hello implements Greeter {
+    @Override
+    public void sayGreet() {
+        System.out.println("Hello!");
+    }
+}
+
+What if i want to provide different greeting implements more and more
+
+like - hello,hai,welcome,goodbye,how are you.....
+
+we need to create class for each messages.
+
+if i introduce more and more classes
+ - it increase more code, which makes our app maintaince hard.
+
+2.Without creating extra/explict class  , we can implement. - anonmous inner classes.
+
+innerclasses;
+ -regular innerclass
+ -static nested inner class
+ -anonmous inner class
+ -method local innerclass
+
+
+anonmous inner class: 
+ It is class implmented by compiler after compilation.
+
+package com.dell.fp.interfaces;
+
+public class AnonmousInnerclassMain {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+        //Hai implmentation via annonamous
+        greeter = new Greeter() {
+            @Override
+            public void sayGreet() {
+                System.out.println("Hello");
+            }
+        };
+        greeter.sayGreet();
+
+        //Hai
+        greeter = new Greeter() {
+            @Override
+            public void sayGreet() {
+                System.out.println("Hai");
+            }
+        };
+        greeter.sayGreet();
+
+        //welcome
+        greeter = new Greeter() {
+            @Override
+            public void sayGreet() {
+                System.out.println("Welcome");
+            }
+        };
+        greeter.sayGreet();
+
+        //How are you?
+        greeter = new Greeter() {
+            @Override
+            public void sayGreet() {
+                System.out.println("How are You!");
+            }
+        };
+        greeter.sayGreet();
+    }
+}
+.............................................................................................
+				Lambda Calculs and java Interfaces
+..............................................................................................
+
+Java introduces Functional Programming via interfaces only.
+
+The interface used for functional programming has some rules.
+
+If the interfaces follows the rules , those interfaces called "Functional Interfaces".
+
+
+Functional programming (Lambda calculs) is introduced in java 8 via "inner classes" : annonmous inner classes.
+
+Lambda Syntax:
+.............
+
+
+InterfaceType  referenceVariable = () -> {
+ //function body.
+}
+
+How to introduce lambda syntax?
+
+->You need interface ; that interface is called as "functional interface".
+
+Is any difference between funcitonal interface and regular interfaces?
+
+Yes!.
+
+Functional interface features:
+
+->functional interface must have only one abstract method. - SAM - Single Abstract methods.
+->functional interface can have other implementation methods - default methods.
+->functional interface can have static methods.
+->functional interface may be annotated with "@FunctionalInterface".
+
+
+Use case : Lambda 
+
+package com.dell.fp.interfaces;
+
+public class FirstLambdaMain {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+        //Old annonmous inner class
+        greeter = new Greeter() {
+            @Override
+            public void sayGreet() {
+                System.out.println("Hello");
+            }
+        };
+        greeter.sayGreet();
+        //Lambda Syntax: fp syntax;
+        greeter = () -> {
+            System.out.println("Hello");
+        };
+        greeter.sayGreet();
+        greeter = () -> {
+            System.out.println("Hai");
+        };
+        greeter.sayGreet();
+        greeter = () -> {
+            System.out.println("Welcome");
+        };
+        greeter.sayGreet();
+        greeter = () -> {
+            System.out.println("How are you ?");
+        };
+        greeter.sayGreet();
+    }
+}
+..............................................................................................
+Lambda Rules:
+
+functional interface must have only one abstract method. - SAM - Single Abstract methods.
+
+package com.dell.fp.functionalinterface.rules;
+
+public interface Greeter {
+    //abstract methods
+    void sayGreet();
+    void sayHello();
+}
+package com.dell.fp.functionalinterface.rules;
+
+public class FunctionalInterfaceMain {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+        greeter = new Greeter() {
+            @Override
+            public void sayGreet() {
+                System.out.println("Greet");
+            }
+            @Override
+            public void sayHello() {
+                System.out.println("Hello");
+            }
+        };
+        greeter.sayGreet();
+        greeter.sayHello();
+        //lambda version
+        //error 
+        greeter = ()->{
+            System.out.println("h");
+        };
+    }
+}
+..............................................................................................
+
+SAM,Default methods,static methods inside functional interface:
+..............................................................
+package com.dell.fp.functionalinterface.rules;
+
+//functional interface
+public interface Connector {
+    //only one abstract method; SAM
+    void connect();
+
+    //static methods
+    static void getConnector(){
+        System.out.println("Connector STATIC methods");
+    }
+    //default methods
+    default void httpConnect() {
+        System.out.println("HTTP Connect");
+    }
+    default void sqlConnect() {
+        System.out.println("SQL Connect");
+    }
+}
+package com.dell.fp.functionalinterface.rules;
+
+public class FunctionalInterfaceWithDefaultMethods {
+    public static void main(String[] args) {
+        Connector connector = null;
+        connector = () -> {
+            System.out.println("Connect method");
+        };
+        connector.connect();
+        connector.httpConnect();
+        connector.sqlConnect();
+        //static methods calling
+        Connector.getConnector();
+    }
+}
+..............................................................................................
+functional interface annotation:
+
+The marker annotation called @FunctionalInterface  is used mark that interface is functional
+so that the basic rules are applied and verfied.
+
+package com.dell.fp.functionalinterface.rules.annotation;
+
+@FunctionalInterface
+public interface Greeter {
+    void sayGreet();
+   // void doStuff();
+}
+package com.dell.fp.functionalinterface.rules.annotation;
+
+public class FunctionalAnnotation {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+
+        greeter = ()-> {
+            System.out.println("Greeter");
+        };
+        greeter.sayGreet();
+    }
+}
+
+Java 8 has changed lot of built in interfaces to be functional interfaces.
+
+java.lang.Runnable
+
+   Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("runnable");
+            }
+        };
+        runnable.run();
+        runnable = () -> {
+            System.out.println("runnable");
+        };
+        runnable.run();
+.............................................................................................
+
+Functional Programming Principles:
+
+1.Function is first Class citizen:
+ 
+ This means the language supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures.
+
+functions are literals , means values like int,double,string
+
+  int a =10;(literal)
+
+  Type myjob = ()-> {
+
+  }
+  myjob.methodName()
+
+Here myjob is variable
+() -> {}  - function literal
+
+functions are first class -  which means that they can be stored in variables and ds,passed as arg to and return from other functions.
+.............................................................................................
+
+Function args and parameters:
+.............................
+
+package com.dell.fp.functionalinterfaces.args;
+
+public interface Greeter {
+    //args
+    void sayGreet(String message, String toWhom);
+}
+package com.dell.fp.functionalinterfaces.args;
+
+public class ArgsandParamsMain {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+        greeter = new Greeter() {
+            @Override
+            //message,toWhom are args
+            public void sayGreet(String message, String toWhom) {
+                System.out.println(message + " " + toWhom);
+            }
+        };
+        //here Hello and Subramanian are parameters
+        greeter.sayGreet("Hello", "Subramanian");
+
+        //lambda
+        greeter = (String message, String toWhom) -> {
+            System.out.println(message + " " + toWhom);
+        };
+        greeter.sayGreet("Hello", "Subramanian");
+    }
+}
+.............................................................................................
+Code Refactoring:
+.................
+
+package com.dell.fp.functionalinterfaces.args;
+
+public class CodeRefactoring {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+        greeter = (String message, String toWhom) -> {
+            System.out.println(message + " " + toWhom);
+        };
+        greeter.sayGreet("Hello", "Subramanian");
+        //if function body has only one line of code : remove {}
+        greeter = (String message, String toWhom) -> System.out.println(message + " " + toWhom);
+        greeter.sayGreet("Hello", "Subramanian");
+    }
+}
+
+...........................................................................................
+
+Type Inference:
+
+ The data type of function args are understood by default based parameter value
+
+ We dont need to tell args type
+
+package com.dell.fp.functionalinterfaces.args;
+
+
+package com.dell.fp.functionalinterfaces.args;
+
+
+@FunctionalInterface
+public interface Adder {
+    void add(int a,int b);
+}
+package com.dell.fp.functionalinterfaces.args;
+
+@FunctionalInterface
+public interface Greeter {
+    //args
+    void sayGreet(String message, String toWhom);
+}
+
+
+
+
+public class CodeRefactoring {
+    public static void main(String[] args) {
+        Greeter greeter = null;
+        greeter = (String message, String toWhom) -> {
+            System.out.println(message + " " + toWhom);
+        };
+        greeter.sayGreet("Hello", "Subramanian");
+        //if function body has only one line of code : remove {}
+        greeter = (String message, String toWhom) -> System.out.println(message + " " + toWhom);
+        greeter.sayGreet("Hello", "Subramanian");
+
+        //Type Inference Enabled (message,toWhom)
+        greeter = (message, toWhom) -> System.out.println(message + " " + toWhom);
+        greeter.sayGreet("Hello", "Subramanian");
+
+
+
+        Adder adder = (a, b) -> {
+            int c = a + b;
+            System.out.println(c);
+        };
+        adder.add(10, 10);
+    }
+
+}
+..............................................................................................
+
+Single arg,Type Infererence,():
+...............................
+
+package com.dell.fp.functionalinterfaces.args;
+
+@FunctionalInterface
+public interface Name {
+    void setName(String name);
+}
+
+
+Name name = null;
+//if it is single parameter remove ()
+name = myName -> System.out.println(myName);
+name.setName("Subramanian");
+.............................................................................................
+
+Return Values,expression:
+...........................
+package com.dell.fp.functionalinterfaces.returns;
+
+@FunctionalInterface
+public interface GetName {
+    String getName();
+}
+package com.dell.fp.functionalinterfaces.returns;
+
+public class FunctionalInterfaceReturn {
+    public static void main(String[] args) {
+        GetName name = null;
+        name = () -> {
+            return "Subramanian";
+        };
+        System.out.println(name.getName());
+        //code refactoring; if there is no more body, we can remove {} and return keyword
+        name = () -> "Subramanian";
+        System.out.println(name.getName());
+
+    }
+}
+
+if function takes single parameter and returns the same:
+........................................................
+
+package com.dell.fp.functionalinterfaces.returns;
+
+@FunctionalInterface
+public interface SetStockValue {
+    double computeValue(double value);
+}
+
+SetStockValue setStockValue = null;
+setStockValue = value -> value;
+System.out.println(setStockValue.computeValue(10));
+.............................................................................................
+				Higher order function
+............................................................................................
+
+
+First-class functions are a necessity for the functional programming style, in which the use of higher-order functions is a standard practice. 
+
+
+In mathematics and computer science, a higher-order function is a function that does at least one of the following:
+
+->takes one or more functions as arguments,
+->returns a function as its result.
+
+Can i say this fun is Higher order fun?
+
+fun  map(){
+
+}
+Ans: No because it does not follow the thumb rule of higher order function.
+
+Function can be passed into another function as parameter. 
+
+fun  map(FunctionType){
+
+}
+
+What is FunctionType?
+ It is interface - functional interface.
+
+
+Passing function as parameter to another function or method :
+.............................................................
+
+package com.dell.fp.higherorderfun;
+
+public class Socket {
+    //higher order function
+    public void requestHandler(Handler handler) {
+        handler.handle();
+    }
+}
+package com.dell.fp.higherorderfun;
+
+class SocketImpl implements Handler {
+    @Override
+    public void handle() {
+        System.out.println("Socket Handle Implemation");
+    }
+}
+
+public class HigherOrderMain {
+    public static void main(String[] args) {
+        Socket socket = null;
+        socket = new Socket();
+        SocketImpl socketImpl = new SocketImpl();
+        socket.requestHandler(socketImpl);
+        //anonmous inner class
+        socket.requestHandler(new Handler() {
+            @Override
+            public void handle() {
+                System.out.println("Socket Annomous Handler");
+            }
+        });
+        //use lambda
+        socket.requestHandler(() -> System.out.println("Socket Lambda Handler"));
+        Handler handler = () -> System.out.println("Socket Lambda Handler");
+        socket.requestHandler(handler);
+    }
+}
+..............................................................................................
+Args,Parameters and Higher order Functions:
+..........................................
+package com.dell.fp.higherorderfun;
+
+@FunctionalInterface
+public interface HttpHandler<T> {
+    void handle(T payload);
+}
+
+
+package com.dell.fp.higherorderfun;
+
+public class HttpServer {
+    public void requtHandler(HttpHandler<String> httpHandler) {
+        String response = "Hello,This is response";
+        httpHandler.handle(response);
+    }
+}
+   ///Higher order function with args and parameters
+
+        HttpServer httpServer = new HttpServer();
+        httpServer.requtHandler((String response) -> {
+            System.out.println(response);
+        });
+        httpServer.requtHandler(response -> System.out.println(response));
+
+.............................................................................................
+
+Higer order function with Return values:
+
+package com.dell.fp.higherorderfun;
+
+@FunctionalInterface
+public interface HttpHandler<T> {
+    String handle(T payload);
+}
+package com.dell.fp.higherorderfun;
+
+public class HttpServer {
+    public void requtHandler(HttpHandler<String> httpHandler) {
+        String response = "Hello,This is response";
+        String str= httpHandler.handle(response);
+        System.out.println(str);
+    }
+}
+    HttpServer httpServer = new HttpServer();
+        httpServer.requtHandler((String response) -> {
+            System.out.println(response);
+            return "Connected";
+        });
+.............................................................................................
+
+How to pass more higher order functions?
+
+package com.dell.fp.higherorderfun;
+
+public interface Resolve<T> {
+    void resolve(T payload);
+}
+package com.dell.fp.higherorderfun;
+
+public interface Reject<T> {
+    void reject(T errorPayload);
+}
+
+package com.dell.fp.higherorderfun;
+
+public class Auth {
+    public void login(String name, String password, Resolve<String> success, Reject<Throwable> failure) {
+        //biz logic
+        if (name.equals("admin") && password.equals("admin")) {
+            success.resolve("Login Success");
+        } else {
+            failure.reject(new RuntimeException("Login Failed"));
+        }
+    }
+}
+
+Auth auth = new Auth();
+auth.login("admin", "admin", status -> System.out.println(status), errorPayload ->
+System.out.println(errorPayload));
+auth.login("foo", "foo", status -> System.out.println(status), errorPayload ->
+System.out.println(errorPayload));
+............................................................................................
+					Method Reference
+............................................................................................
+
+It is technique to reduce lambda code itself
+
+method references:
+  ::
+
+Types of method refences:
+
+1.instance method as reference 
+     - this::methodName
+2.static method as reference
+    - ClassName::methodName
+3.constructor as reference.
+    new::constructor
+
+
+
+package com.dell.fp.methodreferences;
+
+
+@FunctionalInterface
+interface Printer {
+    void print(String message);
+}
+
+package com.dell.fp.methodreferences;
+
+@FunctionalInterface
+interface UpperCase {
+    String convertToUpper(String message);
+}
+
+package com.dell.fp.methodreferences;
+
+public class MethodReferenceBasic {
+    public static void main(String[] args) {
+        Printer printer = null;
+        //Lambda syntax
+        printer = (res) -> {
+            System.out.println(res);
+        };
+        printer.print("Hello");
+        printer = res -> System.out.println(res);
+        printer.print("Hello");
+        //Method Reference
+        printer = System.out::println;
+        printer.print("Hello");
+
+        //Lambda
+        UpperCase upperCase = null;
+        upperCase = name -> name.toUpperCase();
+        System.out.println(upperCase.convertToUpper("subramanian"));
+
+        //Method Reference
+        upperCase = String::toUpperCase;
+        System.out.println(upperCase.convertToUpper("subramanian"));
+
+    }
+}
+..............................................................................................
+
+Instance Methods and Method Reference
+
+package com.dell.fp.methodreferences;
+
+class MicroTask {
+    public void startMicroTask() {
+        System.out.println(Thread.currentThread().getName() + " Running");
+    }
+    public static void startMicroTasks() {
+        System.out.println(Thread.currentThread().getName() + " Running");
+    }
+}
+
+public class Task {
+
+    //thread logic into separate method
+    private void startMicroTask() {
+        System.out.println(Thread.currentThread().getName() + " Running");
+    }
+
+    public void startTask() {
+        //Thread implementation : using legacy , lambda,Method reference
+        Thread thread = null;
+        thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //is having biz logic of thread execution
+                System.out.println(Thread.currentThread().getName() + " Running");
+            }
+        });
+        thread.setName("Thread-1");
+        thread.start();
+
+        //lambda
+        //is having biz logic of thread execution
+        thread = new Thread(() -> System.out.println(Thread.currentThread().getName() + " Running"));
+        thread.setName("Thread-2");
+        thread.start();
+
+        //isolate Thread logic out
+        Runnable runnable = () -> System.out.println(Thread.currentThread().getName() + " Running");
+        thread = new Thread(runnable);
+        thread.setName("Thread-3");
+        thread.start();
+        //isolate Thread logic out into method
+        thread = new Thread(() -> this.startMicroTask());
+        thread.setName("Thread-4");
+        thread.start();
+
+        //isolate Threading logic and refer using method Reference
+        thread = new Thread(this::startMicroTask);
+        thread.setName("Thread-5");
+        thread.start();
+
+        //isolate Threading logic into separate class and refer using method Reference
+        MicroTask microTask = new MicroTask();
+        thread = new Thread(microTask::startMicroTask);
+        thread.setName("Thread-6");
+        thread.start();
+
+        thread = new Thread(new MicroTask()::startMicroTask);
+        thread.setName("Thread-7");
+        thread.start();
+
+        //static methods
+        thread = new Thread(MicroTask::startMicroTasks);
+        thread.setName("Thread-8");
+        thread.start();
+    }
+}
+package com.dell.fp.methodreferences;
+
+public class MethodReferenceAdvanced {
+    public static void main(String[] args) {
+       Task task = new Task();
+       task.startTask();
+
+    }
+}
+..............................................................................................
+
+				Java Built in Functional Interfaces
+..............................................................................................
+
+
+How to reduce functional interfaces itself?
+
+if you want to implement lambda, you need functional interface.
+
+Lets i want to design common interfaces which accepts and returns
+
+-single input, no output
+-two input , single output
+-only integer input,return the same
+-two any type of input,return boolean ; predicate
+etc...
+do you think that it is good idea to have your own functional interfaces for
+common uses cases
+No!
+ 
+Java provides built in interfaces to reduce code with respect to writing extra our won functional interfaces
+
+
+Consumer : setter
+
+package com.dell.fp.builtinfp;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class ConsumerDemo {
+    public static void main(String[] args) {
+        Consumer<String> consumer = null;
+        consumer = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        };
+        consumer.accept("Hello");
+        consumer = s -> System.out.println(s);
+        consumer.accept("Hello");
+        consumer = System.out::println;
+        consumer.accept("Hello");
+        //List
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        list.forEach(System.out::println);
+
+    }
+}
+
+Supplier: getter
+
+package com.dell.fp.builtinfp;
+
+import java.util.function.Supplier;
+
+public class SupplierDemo {
+    public static void main(String[] args) {
+        Supplier supplier = null;
+        supplier = () -> "Hello";
+        System.out.println(supplier.get());
+    }
+}
+
+Predicate : Boolean return , input can be any type
+package com.dell.fp.builtinfp;
+
+import java.util.function.Predicate;
+
+public class PredicateTest {
+    public static void main(String[] args) {
+        Predicate<Integer> predicate = null;
+        predicate = value -> value % 2 == 0;
+        System.out.println(predicate.test(10) ? "Even" : "Odd");
+        System.out.println(predicate.test(3) ? "Even" : "Odd");
+
+    }
+}
+.............................................................................................
+
+Collections uses functional programming apis
+
+Streams  reference implementation of functional apis.
+.............................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
