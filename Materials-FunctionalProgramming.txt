@@ -1013,7 +1013,7 @@ public class MethodReferenceBasic {
 }
 ..............................................................................................
 
-Instance Methods and Method Reference
+Instance Methods and static Method Reference
 
 package com.dell.fp.methodreferences;
 
